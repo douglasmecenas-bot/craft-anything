@@ -1,0 +1,9 @@
+# Manual Craft evaluation (not yet run)
+
+The branch supplies a manual-only workflow, and temporarily overrides the existing `ci.yml` workflow path on this branch only. The existing path is used because GitHub requires a manually dispatched workflow to exist on the default branch. Nothing in this branch alters main; do not merge this override.
+
+Dispatch the existing CI workflow with this branch selected only after confirming that GitHub Actions is enabled for this repository and the dispatcher has access. The new `craft-secure-eval.yml` path cannot be dispatched while absent from the default branch. No GitHub token is persisted by checkout; the standard read-only workflow token is still issued by GitHub. No user secrets or artifacts are configured. Public standard hosted runners have free execution, but do not use larger runners or private-runner quota.
+
+The source checkout is pinned to `1f8508a104134c436cbba5ea2f675619ef47702f`, Rust to 1.97.0, cargo-deny to 0.18.4, checkout action to a commit, and Cargo uses the lock file. System packages and hosted runner images are not fully reproducible or hash-pinned. This workflow has not been executed or validated on GitHub; availability of toolchains and cargo-deny must be confirmed by a run.
+
+The Linux real MCP smoke probe runs as nobody in a new network namespace, verifies absence of an IPv4 route before starting, and tests MCP initialization, listing, a session read, and restricted refusal of a build command. It does not test the Venture LAB broker, Clean Room separation, a target reference, Windows network isolation, revocation, input attacks, or all possible egress channels. A namespace alone is not a general filesystem sandbox. The job must fail closed if unshare or the route verification fails. Do not treat this draft as proof of isolation or production readiness.
