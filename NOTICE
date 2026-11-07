@@ -12,9 +12,8 @@ Third-party material
 This product bundles third-party material under its own licenses, listed below. The per-file
 list (author, source, license) is in ATTRIBUTION.md.
 
-- Inter (assets/fonts/) — SIL Open Font License 1.1. See assets/fonts/OFL-Inter.txt.
+- DM Sans (assets/fonts/) — SIL Open Font License 1.1. See assets/fonts/OFL-DMSans.txt.
 - JetBrains Mono (assets/fonts/) — SIL Open Font License 1.1. See assets/fonts/OFL-JetBrainsMono.txt.
-- Archivo (assets/fonts/) — SIL Open Font License 1.1. See assets/fonts/OFL-Archivo.txt.
 - Geist Mono (assets/fonts/) — SIL Open Font License 1.1. See assets/fonts/OFL-GeistMono.txt.
 - Lucide icons (assets/icons/) — ISC License. See assets/icons/LICENSE-lucide.txt.
 - egui default fonts (embedded by the epaint_default_fonts crate):
